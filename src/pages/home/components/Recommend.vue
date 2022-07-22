@@ -4,7 +4,7 @@
     <ul>
       <li 
         class="item border-bottom" 
-        v-for="item of recommendList" 
+        v-for="item of list" 
         :key="item.id"
       >
         <img class="item-img" :src="item.imgUrl" />
@@ -21,25 +21,8 @@
 <script>
   export default {
     name: 'HomeRecommend',
-    data () {
-      return {
-        recommendList: [{
-          id: '0001',
-          imgUrl: 'https://img1.qunarzz.com/sight/p0/2104/c6/c6d76981ae21f58ea3.water.jpg_256x160_6f5bec7a.jpg',
-          title: '上海迪士尼乐园',
-          desc: '充满欢乐童真的梦幻乐园'
-        }, {
-          id: '0002',
-          imgUrl: 'https://img1.qunarzz.com/sight/p0/2104/c6/c6d76981ae21f58ea3.water.jpg_256x160_6f5bec7a.jpg',
-          title: '上海迪士尼乐园',
-          desc: '充满欢乐童真的梦幻乐园'
-        }, {
-          id: '0003',
-          imgUrl: 'https://img1.qunarzz.com/sight/p0/2104/c6/c6d76981ae21f58ea3.water.jpg_256x160_6f5bec7a.jpg',
-          title: '上海迪士尼乐园',
-          desc: '充满欢乐童真的梦幻乐园'
-        }]
-      }
+    props: {
+      list: Array
     }
   }
 </script>
