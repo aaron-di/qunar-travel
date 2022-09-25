@@ -3,8 +3,8 @@
     <div class="banner" @click="handleBannerClick">
       <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-title">{{ this.sightName }}</div>
-        <div class="banner-number"><span class="iconfont">&#xe8d3;</span>{{ this.bannerImgs.length }}</div>
+        <div class="banner-title">{{ sightName }}</div>
+        <div class="banner-number"><span class="iconfont">&#xe8d3;</span>{{ bannerImgs.length }}</div>
       </div>
     </div>
     <fade-animation>
