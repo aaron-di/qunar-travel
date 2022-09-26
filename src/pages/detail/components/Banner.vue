@@ -18,32 +18,33 @@
 </template>
 
 <script>
+  import { ref } from 'vue'
   import CommonGallery from '@/common/gallery/Gallery'
   import FadeAnimation from '@/common/fade/FadeAnimation'
   export default {
     name: 'DetailBanner',
+    components: {
+      CommonGallery,
+      FadeAnimation
+    },
     props: {
       sightName: String,
       bannerImg: String,
       bannerImgs: Array
     },
-    data () {
-      return {
-        showGallery: false
+    setup() {
+      const showGallery = ref(false)
+
+      function handleBannerClick() {
+        showGallery.value = true
       }
-    },
-    methods: {
-      handleBannerClick () {
-        this.showGallery = true
-      },
-      handleGalleryClose () {
-        this.showGallery = false
+
+      function handleGalleryClose() {
+        showGallery.value = false
       }
-    },
-    components: {
-      CommonGallery,
-      FadeAnimation
-    },
+
+      return { showGallery, handleBannerClick, handleGalleryClose }
+    }
   }
 </script>
 
